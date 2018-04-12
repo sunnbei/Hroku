@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}TopPage{% endblock %}
+{% load staticfiles %}
+
+	{% block body %}
+      <div id="wrapper">
+        <div id="page-wrapper">
+          <div class="row">
+            <div class="col-lg-6 full-width margin-top-20percent" >
+              <div class="panel panel-default full-width">
+
+                <div class="panel-heading">
+				  <h5>Creator:Koki Sumiya</h5>
+                </div>
+
+                <div class="panel-body full-width full-height">
+					<div class="container">
+ 
+						<h1>メンバーを編集する</h1>
+						<h2>編集</h2>
+						<form method="post" action="">
+							<div class="form-group">
+							{{ form.errors.id }}
+							<label>{{ form.id.label }} {{ form.id }}</label><br>
+							{{ form.errors.name }}
+							<label>{{ form.name.label }} {{ form.name }}</label><br>
+							{{ form.errors.email }}
+							<label>{{ form.email.label }} {{ form.email }}</label><br>
+    						<input type="submit" name=send class="btn btn-primary" value="送信">
+							<input type="submit" name=delete class="btn btn-primary" value="削除">
+    						{% csrf_token %}
+							</div>
+						</form>
+						<hr>
+						
+
+					</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	{% endblock %}

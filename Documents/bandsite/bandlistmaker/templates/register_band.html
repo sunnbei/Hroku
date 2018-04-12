@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}TopPage{% endblock %}
+{% load staticfiles %}
+
+	{% block body %}
+      <div id="wrapper">
+        <div id="page-wrapper">
+          <div class="row">
+            <div class="col-lg-6 full-width margin-top-20percent" >
+              <div class="panel panel-default full-width">
+
+                <div class="panel-heading">
+				  <h5>Creator:Koki Sumiya</h5>
+                </div>
+
+                <div class="panel-body full-width full-height">
+					<div class="container">
+ 
+						<h1>バンドを登録する</h1>
+						<h2>登録</h2>
+						<form method="post" action="">
+							<div class="form-group">
+							{{ form.errors.name }}
+							<label>{{ form.name.label }} {{ form.name }}</label><br>
+							{{ form.errors.video_url }}
+							<label>{{ form.video_url.label }} {{ form.video_url }}</label><br>
+							{{ form.seasons.label }} {{ form.seasons }}
+    						<input type="submit" class="btn btn-primary" value="送信">
+    						{% csrf_token %}
+							</div>
+						</form>
+						<hr>
+						
+
+					</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	{% endblock %}
